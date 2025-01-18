@@ -2,16 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug Simple App",
+      "name": "Debug Current FastHTML App",
       "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
       "args": [
-        "api.gui.simple_app:app",
+        "api.gui.${fileBasenameNoExtension}:app",
         "--host",
         "0.0.0.0",
         "--port",
-        "5001",
+        "5002",
         // "--reload"
       ],
       "justMyCode": true,
@@ -26,11 +26,11 @@
       "request": "launch",
       "module": "uvicorn",
       "args": [
-        "api.gui.game_app:app",
+        "api.gui.simple_app:app",
         "--host",
         "0.0.0.0",
         "--port",
-        "5001",
+        "5002",
         // "--reload"
       ],
       "justMyCode": true,
