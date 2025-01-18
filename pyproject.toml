@@ -131,11 +131,8 @@ unfixable = [
 # Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["E402", "F401"]
-# "*.ipynb" = ["E501"]  # disable line-too-long in notebooks
+"*.ipynb" = ["F401"]
 "api/*" = ["D"]
-
-[tool.ruff.lint.flake8-import-conventions.extend-aliases]
-some_alias = ""
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
@@ -194,7 +191,7 @@ dev = [
     "ipykernel>=6.29.5",
     "mypy>=1.13.0",
     "pre-commit>=4.0.1",
-    "ruff==0.8.0",
+    "ruff==0.9.2",
     # "scalene~=1.5.21.2",
 ]
 doc = [
