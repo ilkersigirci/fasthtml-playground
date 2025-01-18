@@ -1,0 +1,31 @@
+#
+name: Test the module
+
+on:
+  push:
+    branches:
+      - dummy
+  pull_request:
+    branches:
+      - dummy
+
+jobs:
+  test:
+    environment: Production
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Disable Logger Outputs
+        run: |
+          sed -i "s/log_cli = true/log_cli = false/" pyproject.toml
+      - name: Set up python environment
+        uses: ./.github/actions/setup-python
+      - name: Install the Project with Test Dependencies
+        run: |
+          make install-test
+      - name: Test the Project
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          SESSKEY: 70229eec-76ba-4096-bde8-c4107ff0c25c
+        run: |
+          make test-all-parallel
