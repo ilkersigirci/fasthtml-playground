@@ -48,6 +48,6 @@ def _progress_hook(d):
         progress = (
             float(d.get("downloaded_bytes", 0)) / float(d.get("total_bytes", 1)) * 100
         )
-        logger.info(f"Download progress: {progress:.1f}%")
+        logger.debug(f"Download progress: {progress:.1f}%")
     elif d["status"] == "finished":
-        logger.info("Download completed successfully")
+        logger.debug("Download completed successfully")
