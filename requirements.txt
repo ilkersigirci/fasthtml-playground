@@ -18,7 +18,16 @@ certifi==2024.12.14
 click==8.1.8
     # via uvicorn
 colorama==0.4.6 ; sys_platform == 'win32'
+    # via
+    #   click
+    #   loguru
+    #   uvicorn
 fastcore==1.8.1
+    # via
+    #   apswutils
+    #   fastlite
+    #   python-fasthtml
+    #   tinyredis
 fastlite==0.1.1
     # via python-fasthtml
 h11==0.14.0
@@ -46,7 +55,9 @@ packaging==24.2
 python-dateutil==2.9.0.post0
     # via python-fasthtml
 python-dotenv==1.0.1
+    # via uvicorn
 python-fasthtml==0.12.14
+    # via fasthtml-playground
 python-multipart==0.0.20
     # via python-fasthtml
 pyyaml==6.0.2
